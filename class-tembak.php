@@ -22,7 +22,7 @@ function isi_Quiz($token)
 'Accept-Language: en-US,en;q=0.5',
 'Accept-Encoding: gzip, deflate',
 'Content-Type: application/json',
-'marlboro-token: '.$token[1].'');
+'marlboro-token: '.$token.'');
     $p = curl("https://api.marlboro.id/api/article/web-series-list?0=n&1=o", false, $header);
     preg_match_all('/"string_id":"(.*?)",/', $p[1], $string);
     $jawaban = array('FOTO-FOTO', 'VLOG', 'CARI TEMAN');
@@ -69,7 +69,7 @@ $header = array (
 'Accept-Language: en-US,en;q=0.5',
 'Accept-Encoding: gzip, deflate',
 'Content-Type: application/json',
-'marlboro-token: '.$token[1].'');
+'marlboro-token: '.$token.'');
 $get = curl("https://api.marlboro.id/api/auth/get-short-profile", '{}', $header);
 preg_match('/"point":(.*?),/', $get[1], $point);
 return $point[1];
