@@ -27,7 +27,7 @@ function isi_Quiz($token)
     preg_match_all('/"string_id":"(.*?)",/', $p[1], $string);
     $jawaban = array('FOTO-FOTO', 'VLOG', 'CARI TEMAN');
     for ($i=0; $i < 5; $i++) { 
-        for ($o=0; $o < 20; $o++) { 
+        for ($o=0; $o < 5; $o++) { 
     $get[$i] = curl("https://api.marlboro.id/api/article/submit-quiz", '{"string_id":"'.$string[1][1].'","answer":"'.$jawaban[array_rand($jawaban)].'"}', $header);
 }
 }
